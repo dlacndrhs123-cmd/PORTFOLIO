@@ -4,6 +4,11 @@ const main_inner = document.getElementById('main_inner');
 video.addEventListener('ended', () => {
   main_inner.classList.add('active');
 });
+// 영상 파일이 없거나 재생할 수 없어도 기존 MAIN 문구와 애니메이션을 표시합니다.
+const revealMain = () => main_inner.classList.add('active');
+video.addEventListener('error', revealMain);
+video.querySelectorAll('source').forEach(source => source.addEventListener('error', revealMain));
+if (video.networkState === 3) revealMain();
 
 
 

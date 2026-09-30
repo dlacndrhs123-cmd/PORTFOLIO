@@ -1,0 +1,132 @@
+media:
+  input: images
+  output: /images
+content:
+  - name: works
+    label: Works
+    type: file
+    path: data/works.json
+    format: json
+    list: true
+    operations:
+      delete: false
+    fields:
+      - name: id
+        label: 작품 ID
+        type: string
+        required: true
+        pattern: '^[a-z0-9-]+$'
+      - name: title
+        label: 작품명
+        type: string
+        required: true
+      - name: category
+        label: 카테고리
+        type: string
+        required: true
+      - name: year
+        label: 연도
+        type: string
+      - name: thumbnail
+        label: 대표 이미지
+        type: image
+        required: true
+        options:
+          path: images/uploads
+      - name: thumbnailAlt
+        label: 이미지 대체 텍스트
+        type: string
+      - name: description
+        label: 간단한 설명
+        type: text
+      - name: detailPage
+        label: 상세 페이지
+        type: reference
+        description: Detail Pages에서 먼저 HTML 경로를 등록하세요. 현재 기존 링크의 HTML 7개는 저장소에 없습니다.
+        options:
+          collection: detail-pages
+          search: title,path
+          value: '{fields.path}'
+          label: '{fields.title} — {fields.path} ({fields.status})'
+      - name: published
+        label: 공개 여부
+        type: boolean
+        default: true
+      - name: featured
+        label: 메인 노출
+        type: boolean
+        default: false
+        description: 기존 MAIN에는 작품 노출 영역이 없어 값만 보관합니다.
+      - name: order
+        label: 노출 순서
+        type: number
+        default: 100
+  - name: detail-pages
+    label: Detail Pages
+    type: collection
+    path: content/detail-pages
+    format: json
+    filename: '{primary}.json'
+    exclude: ['.gitkeep']
+    view:
+      primary: title
+      fields: [title, path, status]
+      search: [title, path]
+      sort: [title]
+      default:
+        sort: title
+        order: asc
+    fields:
+      - name: title
+        label: 페이지명
+        type: string
+        required: true
+      - name: path
+        label: 실제 HTML 경로
+        type: string
+        required: true
+        description: '예: detail-branding.html 또는 details/branding.html. GitHub에 실제 HTML을 먼저 올려주세요.'
+        pattern: '^(?!/)(?!.*\.\.)[a-zA-Z0-9_/-]+\.html$'
+      - name: status
+        label: 파일 확인 메모
+        type: string
+        description: 실제 HTML을 올렸다면 이 값을 파일 있음으로 수정하세요. 자동 확인 값은 아닙니다.
+  - name: guestbook
+    label: Guestbook
+    type: collection
+    path: content/guestbook
+    format: json
+    operations:
+      create: false
+      rename: false
+      delete: true
+    exclude: ['.gitkeep']
+    view:
+      primary: name
+      fields: [name, message, createdAt, approved]
+      search: [name, message]
+      sort: [createdAt, approved]
+      default:
+        sort: createdAt
+        order: desc
+    fields:
+      - name: name
+        label: 이름
+        type: string
+        required: true
+        readonly: true
+      - name: message
+        label: 메시지
+        type: text
+        required: true
+        readonly: true
+      - name: createdAt
+        label: 작성일
+        type: date
+        readonly: true
+        options:
+          time: true
+      - name: approved
+        label: 승인 여부
+        type: boolean
+        default: false

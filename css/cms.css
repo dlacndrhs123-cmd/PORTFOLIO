@@ -1,0 +1,35 @@
+/* Existing page and card styles remain in style.css. Scope additions to the form. */
+#works-status { color: #78756e; width: 80%; }
+#contact .guestbook-wrap {
+  width: min(560px, 80%);
+  max-height: calc(100dvh - 150px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 12px 0;
+}
+#guestbook-form { margin-top: 24px; }
+#guestbook-form h2 { font-size: 1.5rem; }
+#guestbook-form .guestbook-note { margin: 8px 0 16px; }
+#guestbook-form label { display: block; margin: 12px 0 4px; }
+#guestbook-form input, #guestbook-form textarea, #guestbook-form button {
+  box-sizing: border-box;
+  font: inherit;
+  color: inherit;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+}
+#guestbook-form input, #guestbook-form textarea {
+  width: 100%;
+  padding: 10px;
+  background: rgba(255,255,255,.65);
+}
+#guestbook-form textarea { resize: vertical; }
+#guestbook-form button { background: transparent; padding: 10px 20px; cursor: pointer; margin-top: 14px; }
+#guestbook-form button:disabled { opacity: .5; cursor: wait; }
+#guestbook-form :focus-visible { outline: 2px solid #333; outline-offset: 3px; }
+#guestbook-form .guestbook-honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+#guestbook-status { margin-top: 12px; min-height: 1.6em; }
+#guestbook-turnstile { margin-top: 12px; }
+@media (max-width: 480px) {
+  #contact .guestbook-wrap { width: calc(100% - 64px); }
+}
