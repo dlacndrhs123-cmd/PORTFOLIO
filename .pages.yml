@@ -36,13 +36,24 @@ content:
       - name: thumbnailAlt
         label: 이미지 대체 텍스트
         type: string
+      - name: coverLayout
+        label: 표지 표시 방식
+        type: select
+        default: standard
+        description: 글자가 포함된 완성 표지는 이미지 전체를 표시하고 별도 작품 설명은 숨깁니다.
+        options:
+          values:
+            - name: standard
+              label: 기존 카드 (이미지 + 설명)
+            - name: image
+              label: 완성 표지 이미지
       - name: description
         label: 간단한 설명
         type: text
       - name: detailPage
         label: 상세 페이지
         type: reference
-        description: Detail Pages에서 먼저 HTML 경로를 등록하세요. 현재 기존 링크의 HTML 7개는 저장소에 없습니다.
+        description: Detail Pages에서 먼저 HTML 경로를 등록하세요. 현재 기존 링크 중 HTML 6개는 저장소에 없습니다.
         options:
           collection: detail-pages
           search: title,path
@@ -61,6 +72,38 @@ content:
         label: 노출 순서
         type: number
         default: 100
+  - name: video-projects
+    label: Video Slides
+    type: file
+    path: data/video-projects.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: 채널명 / 프로젝트명
+        type: string
+        required: true
+      - name: subtitle
+        label: 영상 소개
+        type: text
+      - name: profile
+        label: 프로필 이미지
+        type: image
+        required: true
+        options:
+          path: images/works/video
+      - name: profileAlt
+        label: 프로필 이미지 대체 텍스트
+        type: string
+      - name: image
+        label: 큰 작업 이미지
+        type: image
+        required: true
+        options:
+          path: images/works/video
+      - name: imageAlt
+        label: 작업 이미지 대체 텍스트
+        type: string
   - name: detail-pages
     label: Detail Pages
     type: collection

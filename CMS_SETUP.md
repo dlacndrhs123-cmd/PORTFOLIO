@@ -16,7 +16,8 @@
 5. 대표 이미지는 `images/uploads`에 업로드하거나 `images`의 기존 파일을 선택합니다.
 6. 공개 여부를 끄면 사이트에 표시되지 않습니다. 노출 순서는 작은 숫자가 먼저입니다.
 
-Works는 `data/works.json` 전체 배열을 편집합니다. 기존 작품 7개를 그대로 옮겼습니다.
+Works는 `data/works.json` 전체 배열을 편집합니다. 기존 작품 7개를 유지하고 NTO THE GARDEN을 첫 번째 작품으로 추가했습니다.
+`표지 표시 방식`에서 완성 표지 이미지를 선택하면 이미지 전체를 보여주며 이미지에 이미 포함된 제목·설명을 중복 표시하지 않습니다.
 작품 ID는 영어 소문자·숫자·하이픈으로 서로 다르게 입력하세요.
 `featured`는 기존 MAIN에 작품 영역이 없어 보관만 합니다. 연도도 저장되지만 기존 카드에는 새 표시를 추가하지 않습니다.
 공개 여부를 꺼도 공개 GitHub와 JSON 원본을 비공개로 만드는 것은 아닙니다.
@@ -28,6 +29,29 @@ GitHub의 `data/works.json`에 새 항목이 생겼는지 확인한 뒤 CMS에�
 이는 Pages CMS 실제 로그인 후 확인해야 하는 항목입니다. 로컬 데이터 연결 검증과는 다릅니다.
 
 ## 상세페이지 제작
+
+### NTO THE GARDEN
+
+WORKS 첫 표지는 `images/works/nto-the-garden/cover.png`입니다.
+클릭하면 `detail-nto-the-garden.html`이 기존 Fancybox iframe으로 열립니다.
+외부·내부 이미지 2장은 Swiper 12를 이용해 드래그 / 터치 / 좌우 버튼 / 하단 점 / 키보드 방향키로 넘길 수 있습니다.
+원본 이미지 비율을 유지하고 자동 넘김은 사용하지 않습니다.
+상세 설명은 HTML에서, 전용 스타일과 슬라이드 설정은 `css/detail-nto-the-garden.css`, `js/detail-nto-the-garden.js`에서 수정합니다.
+완성 표지 안의 글자는 이미지에 포함돼 있어 CMS 텍스트 변경 시 이미지도 별도로 교체해야 합니다.
+
+### VIDEO Editing
+
+영상 편집 작품을 클릭하면 `detail-video.html`이 열립니다. 첨부 시안처럼 검은 배경에
+왼쪽 채널명·설명·프로필, 오른쪽 큰 작업 이미지를 배치한 같은 구조의 슬라이드 4장입니다.
+첫 장은 로아디자인TV이며 나머지 3장의 이름·소개는 임시 문구입니다.
+흰색 이미지 영역에는 `images/works/video`의 임시 SVG 이미지를 넣었습니다.
+Swiper 12의 드래그 / 터치 / 좌우 버튼 / 하단 점 / 키보드로 넘기며 마지막 장 다음에는 첫 장으로 돌아옵니다.
+모바일에서는 채널 정보 아래에 큰 이미지를 배치합니다.
+
+Pages CMS → Video Slides에서 4개 항목의 채널명·설명·프로필·작업 이미지를 교체할 수 있습니다.
+항목은 4개를 유지하세요. 데이터는 `data/video-projects.json`에 저장됩니다.
+WORKS 목록의 대표 이미지는 Works의 영상 편집 작품에서 별도로 바꿀 수 있습니다.
+레이아웃과 동작은 `css/detail-video.css`, `js/detail-video.js`에서 수정합니다.
 
 GitHub에서 실제 HTML 상세페이지를 제작합니다. 예: `details/branding.html`.
 상세페이지가 참조하는 CSS / 이미지도 함께 올립니다. 기존 Fancybox iframe으로 열립니다.
@@ -49,7 +73,6 @@ HTML 자체를 CMS가 덮어쓰지 않도록 메타데이터를 별도로 관리
 다음 링크는 기존 카드에 있지만 실제 HTML 파일은 저장소에 없습니다.
 목록의 메모에도 `링크는 있지만 파일이 없음`으로 표시했습니다. 가짜 HTML은 만들지 않았습니다.
 
-- `detail-video.html`
 - `detail-motion.html`
 - `detail-poster.html`
 - `detail-branding.html`

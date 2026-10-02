@@ -31,6 +31,14 @@
         item.dataset.workId = String(work.id || '');
         item.dataset.featured = String(work.featured === true);
         const anchor = card.querySelector('.work-card');
+        const imageCover = work.coverLayout === 'image';
+        anchor.dataset.coverLayout = imageCover ? 'image' : 'standard';
+        if (imageCover) {
+          anchor.setAttribute('aria-label', `${String(work.title || '작품')} 상세페이지 열기`);
+          anchor.setAttribute('data-width', '1920');
+          anchor.setAttribute('data-height', '1080');
+          card.querySelector('.meta-info').hidden = true;
+        }
         const detail = detailURL(work.detailPage);
         if (detail) anchor.href = detail;
         else {

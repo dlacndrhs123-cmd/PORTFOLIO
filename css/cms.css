@@ -1,4 +1,22 @@
 /* Existing page and card styles remain in style.css. Scope additions to the form. */
+/* A supplied complete cover already contains its title and description. */
+#works #works_inner .work-card[data-cover-layout="image"] {
+  padding: 0;
+  background: #000;
+  border-color: #000;
+}
+#works #works_inner .work-card[data-cover-layout="image"] .thumb-box {
+  aspect-ratio: 901 / 1341;
+  background: #000;
+}
+#works #works_inner .work-card[data-cover-layout="image"] .thumb-box img {
+  object-fit: contain;
+  filter: none;
+  transform: none;
+}
+#works #works_inner .work-card[data-cover-layout="image"] .meta-info[hidden] {
+  display: none;
+}
 #works-status { color: #78756e; width: 80%; }
 #contact .guestbook-wrap {
   width: min(560px, 80%);

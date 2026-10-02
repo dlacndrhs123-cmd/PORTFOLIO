@@ -1,0 +1,48 @@
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #000; color: #fff; font-family: 'Pretendard Variable', Pretendard, Arial, sans-serif; }
+button { font: inherit; }
+.project-header { padding: 32px clamp(24px, 2.2vw, 48px) 0; }
+.project-header p { margin: 0; color: #999; font-size: clamp(16px, 1.15vw, 23px); font-weight: 700; }
+.garden-project { min-height: calc(100svh - 60px); display: grid; grid-template-columns: minmax(260px, 22%) minmax(0, 1fr); gap: clamp(32px, 3vw, 64px); align-items: center; padding: 48px clamp(24px, 2.2vw, 48px); }
+.project-info { border-left: 1px solid #aaa; padding: 16px 0 16px clamp(22px, 1.8vw, 38px); }
+h1, h2, p, dl { margin: 0; }
+h1, h2 { font-size: clamp(20px, 1.2vw, 25px); font-weight: 800; line-height: 1.2; }
+.project-subtitle { margin-top: 5px; font-size: 15px; line-height: 1.5; }
+.project-concept { margin-top: clamp(44px, 5vw, 100px); }
+.section-caption { font-size: 12px; color: #d5d5d5; margin: 7px 0 20px; line-height: 1.5; }
+.concept-description { font-size: clamp(14px, .8vw, 17px); line-height: 1.65; word-break: keep-all; }
+.concept-description + .concept-description { margin-top: 12px; }
+.project-colors { margin-top: clamp(40px, 4.5vw, 88px); }
+.color-ratios { margin-top: 10px; font-size: 14px; letter-spacing: 1.1px; }
+.color-ratios div { display: flex; gap: 8px; margin-top: 12px; }
+.color-ratios dd { margin: 0; }
+.project-gallery { min-width: 0; }
+.garden-swiper { width: 100%; aspect-ratio: 2048 / 1151; max-height: max(220px, calc(100svh - 260px)); overflow: hidden; }
+.garden-swiper .swiper-slide { height: 100%; }
+.garden-swiper img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.garden-swiper .swiper-wrapper { transition-timing-function: cubic-bezier(.22, .68, 0, 1.02); }
+.gallery-controls { display: flex; align-items: center; justify-content: center; gap: 25px; margin-top: 28px; }
+.gallery-prev, .gallery-next { width: 38px; height: 38px; padding: 0; border: 1px solid #555; border-radius: 50%; background: transparent; color: #fff; cursor: pointer; font-size: 20px; }
+.gallery-prev:hover, .gallery-next:hover { border-color: #fff; }
+.gallery-pagination { display: flex; align-items: center; justify-content: center; gap: 12px; width: auto !important; }
+.gallery-pagination .swiper-pagination-bullet { width: 12px; height: 12px; margin: 0 !important; padding: 0; border: 0; border-radius: 50%; background: #999; opacity: 1; cursor: pointer; }
+.gallery-pagination .swiper-pagination-bullet-active { background: #fff; }
+.gallery-status { text-align: center; color: #999; font-size: 12px; margin-top: 12px; }
+:focus-visible { outline: 2px solid #fff; outline-offset: 5px; }
+@media (max-width: 900px) {
+  .garden-project { grid-template-columns: minmax(0, 1fr); gap: 32px; padding-top: 36px; min-height: auto; }
+  .garden-swiper { max-height: none; }
+  .project-info { display: grid; grid-template-columns: 1fr 1fr; column-gap: 28px; }
+  .project-intro { grid-column: 1 / -1; margin-bottom: 28px; }
+  .project-concept, .project-colors { margin-top: 0; }
+  .gallery-controls { margin-top: 20px; }
+}
+@media (max-width: 520px) {
+  .project-header { padding-top: 24px; }
+  .project-info { display: block; }
+  .project-concept, .project-colors { margin-top: 28px; }
+  .concept-description { font-size: 14px; }
+  .color-ratios { display: grid; grid-template-columns: 1fr 1fr; gap: 0 12px; font-size: 12px; letter-spacing: .5px; }
+}
+@media (prefers-reduced-motion: reduce) { .garden-swiper .swiper-wrapper { transition-duration: 0ms !important; } }

@@ -14,7 +14,7 @@ async function render(data, ok = true) {
   let updates = 0;
   const form = { querySelector: () => element(), closest: () => ({ addEventListener() {} }), addEventListener() {} };
   const template = { content: { cloneNode() {
-    const selectors = ['.item', '.work-card', 'img', '.index-num', '.category-stamp', '.project-title', '.project-desc'];
+    const selectors = ['.item', '.work-card', 'img', '.meta-info', '.index-num', '.category-stamp', '.project-title', '.project-desc'];
     const nodes = Object.fromEntries(selectors.map(selector => [selector, element()]));
     return { nodes, querySelector: selector => nodes[selector] };
   } } };
@@ -30,17 +30,20 @@ async function render(data, ok = true) {
   await new Promise(resolve => setImmediate(resolve));
   return { cards: list.children, status: workStatus, updates };
 }
-test('existing seven cards keep all migrated content and iframe links', async () => {
+test('all cards keep their content and iframe links; complete covers hide duplicate text', async () => {
   const result = await render(initial);
-  assert.equal(result.cards.length, 7);
+  assert.equal(result.cards.length, initial.length);
   assert.equal(result.updates, 1);
   result.cards.forEach((card, index) => {
     assert.equal(card.nodes['.project-title'].textContent, initial[index].title);
     assert.equal(card.nodes['.project-desc'].textContent, initial[index].description);
     assert.equal(card.nodes['.category-stamp'].textContent, initial[index].category);
-    assert.equal(card.nodes.img.src, initial[index].thumbnail);
+    assert.equal(card.nodes.img.src, new URL(initial[index].thumbnail, 'https://portfolio.example/').href);
     assert.equal(card.nodes['.work-card'].href, 'https://portfolio.example/' + initial[index].detailPage);
   });
+  assert.equal(result.cards[0].nodes['.work-card'].dataset.coverLayout, 'image');
+  assert.equal(result.cards[0].nodes['.meta-info'].hidden, true);
+  assert.ok(result.cards.slice(1).every(card => card.nodes['.work-card'].dataset.coverLayout === 'standard'));
 });
 test('unpublished cards are absent, numeric order wins and untrusted URLs are rejected', async () => {
   const result = await render([
