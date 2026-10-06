@@ -53,7 +53,14 @@
     "published": true,
     "featured": false,
     "order": 3,
-    "coverLayout": "image"
+    "coverLayout": "image",
+    "thumbnailBase64Chunks": [
+      "./data/private-golf-thumb/part-1.txt",
+      "./data/private-golf-thumb/part-2.txt",
+      "./data/private-golf-thumb/part-3.txt",
+      "./data/private-golf-thumb/part-4.txt",
+      "./data/private-golf-thumb/part-5.txt"
+    ]
   },
   {
     "id": "branding",
