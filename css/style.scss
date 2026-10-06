@@ -34,40 +34,36 @@ header{
     align-items:center;}
 }//end:#wrap
 
-#main{
-  position:relative;
-  #main_bg{position:absolute; top:0; left:0; z-index:-1;
-    width:100%; height:100%; display:flex;
-    justify-content:center; align-items:center;
-    background:#c4c4c4;}
-  #back{width:50%;}  
-  #main_inner{
-    width:80%; height:70%; position:relative;
-    //border:1px solid #000; 
-    .title{
-      font-family: 'GMarketSans'; font-weight:700;
-      font-size:3.8vw; line-height:1.2; color:#358;
-      margin-bottom:20px;
-      transform:translateY(50px); opacity:0;
-      span{display:block;}
-    }
-    .sub_line{
-      position:absolute; top:60%; left:62%;
-      font-size:1vw;
-      p{margin-bottom:10px; transform:translateX(-100px); opacity:0;}
-    }
-    &.active{
-      .title{transform:translateY(0); opacity:1;
-        transition:all .4s ease-out;}
-      .sub_line{
-        .sub1{transform:translateX(0); opacity:1;
-          transition:all .4s ease-out .3s;}
-        .sub2{transform:translateX(0); opacity:1;
-          transition:all .4s ease-out .5s;}
-      }
-    }
-  }
-}//end:#main
+#main {
+  position: relative;
+  background: #000;
+}
+#main #main_bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+#main #back {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+body.main-active > header {
+  color: #fff;
+  background: transparent;
+}
+body.main-active #wrap .pager span { background: #fff; }
+body.main-active #wrap .navi { color: #fff; }
+@media (max-width: 600px) {
+  body.main-active > header { padding: 0 16px; }
+  body.main-active > header #title { font-size: 18px; }
+  body.main-active > header #gnb ul { gap: 14px; }
+  body.main-active > header #gnb .btn { font-size: 12px; }
+}
+
 
 
 

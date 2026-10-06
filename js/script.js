@@ -1,17 +1,3 @@
-const video = document.getElementById('back');
-const main_inner = document.getElementById('main_inner');
-// 영상 재생이 끝났을 때 이벤트 발생
-video.addEventListener('ended', () => {
-  main_inner.classList.add('active');
-});
-// 영상 파일이 없거나 재생할 수 없어도 기존 MAIN 문구와 애니메이션을 표시합니다.
-const revealMain = () => main_inner.classList.add('active');
-video.addEventListener('error', revealMain);
-video.querySelectorAll('source').forEach(source => source.addEventListener('error', revealMain));
-if (video.networkState === 3) revealMain();
-
-
-
 const gnb_swiper = new Swiper('#gnb', {
   wrapperClass:"menu", //슬라이드를 감싸는 영역의 클래스
   slideClass:"btn", //각 슬라이드영역의 클래스
@@ -36,7 +22,15 @@ const wrap_swiper = new Swiper('#wrap', {
     clickable: true,
     bulletActiveClass:'active',
   },
-  mousewheel: true
+  mousewheel: true,
+  on: {
+    init(swiper) {
+      document.body.classList.toggle('main-active', swiper.activeIndex === 0);
+    },
+    slideChange(swiper) {
+      document.body.classList.toggle('main-active', swiper.activeIndex === 0);
+    }
+  }
 });
 
 
