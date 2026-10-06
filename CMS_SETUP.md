@@ -3,7 +3,7 @@
 ## 사이트 수정
 
 기존 HTML / CSS / JS 구조를 그대로 사용합니다. `index.html`, `css/style.css`,
-`js/script.js`가 기존 파일입니다. MAIN은 요청하신 완성 표지 이미지로 교체했으며 ABOUT / WORKS는 기존 디자인을 유지합니다.
+`js/script.js`가 기존 파일입니다. MAIN / ABOUT은 요청하신 완성 이미지로 교체했으며 WORKS는 기존 디자인을 유지합니다.
 방명록 전용 스타일은 `css/cms.css`, CMS 데이터 연결은 `js/cms.js`에 있습니다.
 원본 백업 브랜치: `before-cms-setup`.
 
@@ -80,11 +80,14 @@ HTML 자체를 CMS가 덮어쓰지 않도록 메타데이터를 별도로 관리
 - `detail-brochure.html`
 - `detail-leaflet.html`
 
-기존 미디어도 빠져 있습니다: `images/bg2.mp4`, `images/about-hero.png`, `images/about-detail.png`.
+기존 영상 `images/bg2.mp4`는 저장소에 없지만 현재 MAIN은 완성 표지 이미지를 사용합니다.
 GMarketSans와 Playfair Display는 CSS에서 사용하지만 폰트 로딩 정의가 없어 시스템 폰트로 대체됩니다.
 Pretendard / Xeicon / Swiper 12 / Fancybox 6.1은 기존 CDN 연결을 유지합니다.
 MAIN은 `images/main/portfolio-cover.png`를 사용합니다. 원본 비율을 유지해 이미지 안의 글자가 잘리지 않게 표시합니다.
-메인 이미지는 GitHub에서 같은 경로의 파일을 교체하면 됩니다. 검은 메인 화면에서는 메뉴를 흰색으로 표시합니다.
+메인 이미지는 GitHub에서 같은 경로의 파일을 교체하면 됩니다.
+ABOUT은 `images/about/portfolio-about.png`의 완성 소개·연혁 이미지를 사용하며 상단 메뉴 아래에서 원본 비율로 표시합니다.
+ABOUT 이미지 교체도 GitHub에서 같은 경로의 파일을 교체하면 됩니다. 이미지 안의 문구는 이미지 파일에서 수정하세요.
+검은 MAIN / ABOUT 화면에서는 메뉴를 흰색으로 표시합니다.
 
 ## 방명록 확인
 

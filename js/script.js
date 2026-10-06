@@ -26,9 +26,11 @@ const wrap_swiper = new Swiper('#wrap', {
   on: {
     init(swiper) {
       document.body.classList.toggle('main-active', swiper.activeIndex === 0);
+      document.body.classList.toggle('about-active', swiper.activeIndex === 1);
     },
     slideChange(swiper) {
       document.body.classList.toggle('main-active', swiper.activeIndex === 0);
+      document.body.classList.toggle('about-active', swiper.activeIndex === 1);
     }
   }
 });
