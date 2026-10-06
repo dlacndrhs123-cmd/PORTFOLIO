@@ -83,20 +83,9 @@ content:
         label: 채널명 / 프로젝트명
         type: string
         required: true
-      - name: subtitle
-        label: 영상 소개
-        type: text
-      - name: profile
-        label: 프로필 이미지
-        type: image
-        required: true
-        options:
-          path: images/works/video
-      - name: profileAlt
-        label: 프로필 이미지 대체 텍스트
-        type: string
       - name: image
-        label: 큰 작업 이미지
+        label: 슬라이드 전체 이미지
+        description: 제목·설명·QR코드가 포함된 완성 이미지를 원본 비율로 표시합니다.
         type: image
         required: true
         options:

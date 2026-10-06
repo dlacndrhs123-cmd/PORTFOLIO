@@ -1,34 +1,22 @@
 [
   {
     "title": "로아디자인TV",
-    "subtitle": "간판 관련 영상 편집",
-    "profile": "/images/works/video/profile-1.svg",
-    "profileAlt": "1번째 채널 임시 프로필 이미지",
-    "image": "/images/works/video/sample-1.svg",
-    "imageAlt": "1번째 영상 편집 포트폴리오 임시 이미지"
+    "image": "/images/works/video/slide-02.png",
+    "imageAlt": "로아디자인TV — 간판 관련 영상 편집 포트폴리오. 채널 소개, QR코드와 영상 작업 화면."
   },
   {
-    "title": "영상 편집 프로젝트 02",
-    "subtitle": "채널명과 소개 문구를 입력해주세요.",
-    "profile": "/images/works/video/profile-2.svg",
-    "profileAlt": "2번째 채널 임시 프로필 이미지",
-    "image": "/images/works/video/sample-2.svg",
-    "imageAlt": "2번째 영상 편집 포트폴리오 임시 이미지"
+    "title": "에디의부동산",
+    "image": "/images/works/video/slide-03.png",
+    "imageAlt": "에디의부동산 — 부동산 관련 영상 편집 포트폴리오. 채널 소개, QR코드와 영상 작업 화면."
   },
   {
-    "title": "영상 편집 프로젝트 03",
-    "subtitle": "채널명과 소개 문구를 입력해주세요.",
-    "profile": "/images/works/video/profile-3.svg",
-    "profileAlt": "3번째 채널 임시 프로필 이미지",
-    "image": "/images/works/video/sample-3.svg",
-    "imageAlt": "3번째 영상 편집 포트폴리오 임시 이미지"
+    "title": "SEO마스터",
+    "image": "/images/works/video/slide-04.png",
+    "imageAlt": "SEO마스터 — 구글 상위노출 관련 영상 편집 포트폴리오. 채널 소개, QR코드와 영상 작업 화면."
   },
   {
-    "title": "영상 편집 프로젝트 04",
-    "subtitle": "채널명과 소개 문구를 입력해주세요.",
-    "profile": "/images/works/video/profile-4.svg",
-    "profileAlt": "4번째 채널 임시 프로필 이미지",
-    "image": "/images/works/video/sample-4.svg",
-    "imageAlt": "4번째 영상 편집 포트폴리오 임시 이미지"
+    "title": "운쌤인테리어",
+    "image": "/images/works/video/slide-05.png",
+    "imageAlt": "운쌤인테리어 — 인테리어 관련 영상 편집 포트폴리오. 채널 소개, QR코드와 영상 작업 화면."
   }
 ]

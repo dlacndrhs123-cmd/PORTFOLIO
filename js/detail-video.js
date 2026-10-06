@@ -22,15 +22,13 @@
       projects.forEach((project, index) => {
         if (!project || typeof project !== 'object') throw new Error('invalid project');
         const slide = template.content.cloneNode(true);
-        slide.querySelector('h2').textContent = String(project.title || `영상 편집 프로젝트 ${index + 1}`);
-        slide.querySelector('.video-subtitle').textContent = String(project.subtitle || '');
-        const profile = slide.querySelector('.video-profile');
-        const main = slide.querySelector('.video-main img');
-        profile.src = imageURL(project.profile) || `./images/works/video/profile-${index + 1}.svg`;
-        main.src = imageURL(project.image) || `./images/works/video/sample-${index + 1}.svg`;
-        profile.alt = String(project.profileAlt || `${project.title || '채널'} 임시 프로필 이미지`);
-        main.alt = String(project.imageAlt || `${project.title || '영상 편집'} 임시 작업 이미지`);
-        if (index === 0) main.fetchPriority = 'high';
+        const artwork = slide.querySelector('.video-artwork');
+        const source = imageURL(project.image);
+        if (!source) throw new Error('invalid project image');
+        artwork.src = source;
+        artwork.alt = String(project.imageAlt || `${project.title || '영상 편집'} 포트폴리오`);
+        artwork.decoding = 'async';
+        if (index === 0) artwork.fetchPriority = 'high';
         fragment.append(slide);
       });
       wrapper.replaceChildren(fragment);
