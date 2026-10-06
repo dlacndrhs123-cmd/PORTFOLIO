@@ -18,13 +18,14 @@
     "title": "YouTube Video Editing",
     "category": "Video Editing",
     "year": "",
-    "thumbnail": "/images/works/video/sample-1.svg",
-    "thumbnailAlt": "유튜브 영상 편집 포트폴리오 임시 표지",
+    "thumbnail": "/images/works/video/cover.png",
+    "thumbnailAlt": "YOUTUBE VIDEO PORTFOLIO — 유튜브 영상 포트폴리오 표지",
     "description": "채널별 영상 편집 포트폴리오를 4장 슬라이드로 구성했습니다.",
     "detailPage": "detail-video.html",
     "published": true,
     "featured": false,
-    "order": 1
+    "order": 1,
+    "coverLayout": "image"
   },
   {
     "id": "motion",

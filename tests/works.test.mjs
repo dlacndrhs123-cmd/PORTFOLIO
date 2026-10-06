@@ -16,6 +16,7 @@ async function render(data, ok = true) {
   const template = { content: { cloneNode() {
     const selectors = ['.item', '.work-card', 'img', '.meta-info', '.index-num', '.category-stamp', '.project-title', '.project-desc'];
     const nodes = Object.fromEntries(selectors.map(selector => [selector, element()]));
+    nodes['.meta-info'].hidden = false;
     return { nodes, querySelector: selector => nodes[selector] };
   } } };
   const elements = { 'work-card-template': template, 'works-status': workStatus, 'guestbook-form': form, 'guestbook-status': element() };
@@ -41,9 +42,11 @@ test('all cards keep their content and iframe links; complete covers hide duplic
     assert.equal(card.nodes.img.src, new URL(initial[index].thumbnail, 'https://portfolio.example/').href);
     assert.equal(card.nodes['.work-card'].href, 'https://portfolio.example/' + initial[index].detailPage);
   });
-  assert.equal(result.cards[0].nodes['.work-card'].dataset.coverLayout, 'image');
-  assert.equal(result.cards[0].nodes['.meta-info'].hidden, true);
-  assert.ok(result.cards.slice(1).every(card => card.nodes['.work-card'].dataset.coverLayout === 'standard'));
+  result.cards.forEach((card, index) => {
+    const layout = initial[index].coverLayout === 'image' ? 'image' : 'standard';
+    assert.equal(card.nodes['.work-card'].dataset.coverLayout, layout);
+    assert.equal(card.nodes['.meta-info'].hidden, layout === 'image');
+  });
 });
 test('unpublished cards are absent, numeric order wins and untrusted URLs are rejected', async () => {
   const result = await render([
