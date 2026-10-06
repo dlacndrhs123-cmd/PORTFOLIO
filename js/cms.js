@@ -7,6 +7,22 @@
       return url.protocol === 'https:' || (url.origin === location.origin && /^https?:$/.test(url.protocol)) ? url.href : null;
     } catch { return null; }
   }
+  async function setWorkThumbnail(image, work) {
+    const chunks = Array.isArray(work.thumbnailBase64Chunks) ? work.thumbnailBase64Chunks : [];
+    if (chunks.length) {
+      try {
+        const responses = await Promise.all(chunks.map(path => fetch(path, { cache: 'no-cache' })));
+        if (responses.some(response => !response.ok)) throw new Error('Thumbnail data unavailable');
+        const parts = await Promise.all(responses.map(response => response.text()));
+        image.src = `data:image/webp;base64,${parts.join('').replace(/\\s+/g, '')}`;
+        return;
+      } catch (error) {
+        console.warn('Chunked thumbnail failed; using fallback image.', error);
+      }
+    }
+    const thumbnail = thumbnailURL(work.thumbnail);
+    if (thumbnail) image.src = thumbnail;
+  }
   function detailURL(value) {
     if (typeof value !== 'string' || !/^(?:\.\/|\/)?[a-zA-Z0-9_/-]+\.html$/.test(value) || value.includes('..') || value.startsWith('//')) return null;
     const url = new URL(value, location.href);
@@ -47,8 +63,7 @@
           anchor.setAttribute('aria-disabled', 'true');
         }
         const image = card.querySelector('img');
-        const thumbnail = thumbnailURL(work.thumbnail);
-        if (thumbnail) image.src = thumbnail;
+        setWorkThumbnail(image, work);
         image.alt = String(work.thumbnailAlt || work.title || '');
         card.querySelector('.index-num').textContent = `No. ${String(index + 1).padStart(2, '0')}`;
         card.querySelector('.category-stamp').textContent = String(work.category || '');
