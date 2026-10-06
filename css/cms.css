@@ -51,13 +51,3 @@
 @media (max-width: 480px) {
   #contact .guestbook-wrap { width: calc(100% - 64px); }
 }
-
-/* Fourth work: keep the supplied 16:9 interior boards fully visible. */
-#works #works_inner .item[data-work-id="private-golf-lounge"] .work-card[data-cover-layout="image"] .thumb-box {
-  aspect-ratio: 16 / 9;
-}
-#works #works_inner .item[data-work-id="private-golf-lounge"] .work-card[data-cover-layout="image"] .thumb-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
