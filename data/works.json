@@ -42,17 +42,18 @@
     "coverLayout": "image"
   },
   {
-    "id": "poster",
-    "title": "Exhibition Visual",
-    "category": "Poster Design",
+    "id": "private-golf-lounge",
+    "title": "PRIVATE GOLF LOUNGE",
+    "category": "Interior Design",
     "year": "",
-    "thumbnail": "https://picsum.photos/900/620?random=13",
-    "thumbnailAlt": "포스터",
-    "description": "종이의 촉감과 대비를 고려한 활판 인쇄풍 아트 페스티벌 메인 포스터.",
-    "detailPage": "detail-poster.html",
+    "thumbnail": "/images/works/private-golf-lounge/slide-1.webp",
+    "thumbnailAlt": "PRIVATE GOLF LOUNGE — 스포츠와 휴식이 공존하는 프라이빗 라이프스타일 공간",
+    "description": "스포츠와 휴식이 공존하는 프라이빗 라이프스타일 공간. 공간 투시도 3장 슬라이드.",
+    "detailPage": "detail-private-golf-lounge.html",
     "published": true,
     "featured": false,
-    "order": 3
+    "order": 3,
+    "coverLayout": "image"
   },
   {
     "id": "branding",
