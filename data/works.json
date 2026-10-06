@@ -29,16 +29,17 @@
   },
   {
     "id": "motion",
-    "title": "Kinetic Identity",
-    "category": "Motion Graphics",
+    "title": "REUSE",
+    "category": "Interior Design",
     "year": "",
-    "thumbnail": "https://picsum.photos/900/620?random=12",
-    "thumbnailAlt": "모션그래픽",
-    "description": "유기적인 타이포그래피 모션과 아날로그 질감을 결합한 인트로 시퀀스.",
-    "detailPage": "detail-motion.html",
+    "thumbnail": "/images/works/reuse/cover.png",
+    "thumbnailAlt": "REUSE — 기존 공간의 흔적을 남기다. 실내 공간 디자인 포트폴리오 표지",
+    "description": "기존 공간의 흔적을 남기는 인테리어 디자인. 공간 투시도 3장 슬라이드.",
+    "detailPage": "detail-reuse.html",
     "published": true,
     "featured": false,
-    "order": 2
+    "order": 2,
+    "coverLayout": "image"
   },
   {
     "id": "poster",

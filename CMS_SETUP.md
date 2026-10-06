@@ -39,6 +39,16 @@ WORKS 첫 표지는 `images/works/nto-the-garden/cover.png`입니다.
 상세 설명은 HTML에서, 전용 스타일과 슬라이드 설정은 `css/detail-nto-the-garden.css`, `js/detail-nto-the-garden.js`에서 수정합니다.
 완성 표지 안의 글자는 이미지에 포함돼 있어 CMS 텍스트 변경 시 이미지도 별도로 교체해야 합니다.
 
+### REUSE
+
+WORKS 세 번째 표지는 `images/works/reuse/cover.png`입니다.
+클릭하면 `detail-reuse.html`이 기존 Fancybox iframe으로 열립니다.
+첨부된 `01--05.png → 01--06.png → 01--07.png` 순서로 3장을 표시하며,
+파일은 `images/works/reuse/slide-1.png`부터 `slide-3.png`까지입니다.
+화면 크기에 맞춰 완성 이미지 전체를 원본 비율로 표시합니다. 이미지 안의 글자는 이미지 파일에서 수정하세요.
+Swiper 12의 드래그 / 터치 / 좌우 버튼 / 하단 점 / 키보드로 넘기며 마지막 장 다음에는 첫 장으로 돌아옵니다.
+이미지 경로와 대체 텍스트는 HTML, 스타일과 동작은 `css/detail-reuse.css`, `js/detail-reuse.js`에서 수정합니다.
+
 ### VIDEO Editing
 
 WORKS 두 번째 유튜브 표지를 클릭하면 `detail-video.html`이 Fancybox iframe으로 열립니다.
@@ -76,7 +86,6 @@ HTML 자체를 CMS가 덮어쓰지 않도록 메타데이터를 별도로 관리
 다음 링크는 기존 카드에 있지만 실제 HTML 파일은 저장소에 없습니다.
 목록의 메모에도 `링크는 있지만 파일이 없음`으로 표시했습니다. 가짜 HTML은 만들지 않았습니다.
 
-- `detail-motion.html`
 - `detail-poster.html`
 - `detail-branding.html`
 - `detail-cardnews.html`
