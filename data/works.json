@@ -13,7 +13,6 @@
     "featured": false,
     "order": 0
   },
-
   {
     "id": "motion",
     "title": "REUSE",
@@ -33,9 +32,9 @@
     "title": "PRIVATE GOLF LOUNGE",
     "category": "Interior Design",
     "year": "",
-    "thumbnail": "/images/works/private-golf-lounge/slide-1.webp",
-    "thumbnailAlt": "PRIVATE GOLF LOUNGE — 스포츠와 휴식이 공존하는 프라이빗 라이프스타일 공간",
-    "description": "인테리어 디자인 포트폴리오 페이지 3장을 Swiper 슬라이드로 구성했습니다.",
+    "thumbnail": "/images/works/private-golf-lounge/1.png",
+    "thumbnailAlt": "PRIVATE GOLF LOUNGE — 인테리어 디자인 포트폴리오 슬라이드 표지",
+    "description": "인테리어 디자인 포트폴리오 3장을 네 번째 WORK 표지 안에서 Swiper로 넘겨볼 수 있도록 구성했습니다.",
     "detailPage": "detail-private-golf-lounge.html",
     "published": true,
     "featured": false,
@@ -43,26 +42,16 @@
     "coverLayout": "image",
     "thumbnailSlides": [
       {
-        "mimeType": "image/webp",
-        "alt": "PRIVATE GOLF LOUNGE 포트폴리오 페이지",
-        "base64Chunks": [
-          "./data/private-golf-slider/slide-1-part-1.txt",
-          "./data/private-golf-slider/slide-1-part-2.txt"
-        ]
+        "src": "./images/works/private-golf-lounge/1.png",
+        "alt": "PRIVATE GOLF LOUNGE — 전체 공간과 프라이빗 골프 존 포트폴리오 페이지"
       },
       {
-        "mimeType": "image/webp",
-        "alt": "NTO THE GARDEN 포트폴리오 페이지 — 바 공간",
-        "base64Chunks": [
-          "./data/private-golf-slider/slide-2-part-1.txt"
-        ]
+        "src": "./images/works/private-golf-lounge/2.png",
+        "alt": "NTO THE GARDEN — 우드 마감 바 공간 포트폴리오 페이지"
       },
       {
-        "mimeType": "image/webp",
-        "alt": "NTO THE GARDEN 포트폴리오 페이지 — 라운지 공간",
-        "base64Chunks": [
-          "./data/private-golf-slider/slide-3-part-1.txt"
-        ]
+        "src": "./images/works/private-golf-lounge/3.png",
+        "alt": "NTO THE GARDEN — 라운지와 미디어 공간 포트폴리오 페이지"
       }
     ]
   },
@@ -80,7 +69,7 @@
     "order": 4,
     "coverLayout": "image"
   },
-    {
+  {
     "id": "video",
     "title": "YouTube Video Editing",
     "category": "Video Editing",
