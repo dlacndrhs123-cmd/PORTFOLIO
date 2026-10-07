@@ -1,0 +1,10 @@
+# Do not upload Git/build metadata as public Workers static assets
+.git
+.git/**
+node_modules
+node_modules/**
+.wrangler
+.wrangler/**
+.dev.vars
+.env
+.env.*
