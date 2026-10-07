@@ -88,13 +88,14 @@
     "title": "Craft Collection",
     "category": "Brochure",
     "year": "",
-    "thumbnail": "https://picsum.photos/900/620?random=16",
-    "thumbnailAlt": "브로슈어",
+    "thumbnail": "/images/works/brochure/cover.webp",
+    "thumbnailAlt": "Logo Branding Design — Seo-ra Beauty 브랜딩 썸네일",
     "description": "공예 작품들의 결을 온전히 담아낸 여백 중심의 아카이브 북 & 브로슈어.",
     "detailPage": "detail-brochure.html",
     "published": true,
     "featured": false,
-    "order": 6
+    "order": 6,
+    "coverLayout": "image"
   },
   {
     "id": "leaflet",
