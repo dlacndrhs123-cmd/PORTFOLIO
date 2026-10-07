@@ -102,12 +102,13 @@
     "title": "Folding Guide",
     "category": "Leaflet",
     "year": "",
-    "thumbnail": "https://picsum.photos/900/620?random=17",
-    "thumbnailAlt": "리플릿",
+    "thumbnail": "/images/works/leaflet/cover.webp",
+    "thumbnailAlt": "Logo Branding Design — 여주빛한의원 브랜딩 썸네일",
     "description": "3단 접지(Z-fold) 전개 순서에 맞춘 입체적 동선 안내와 인포메이션 리플릿.",
     "detailPage": "detail-leaflet.html",
     "published": true,
     "featured": false,
-    "order": 7
+    "order": 7,
+    "coverLayout": "image"
   }
 ]
