@@ -13,7 +13,7 @@
       const responses = await Promise.all(chunks.map(path => fetch(path, { cache: 'no-cache' })));
       if (responses.some(response => !response.ok)) throw new Error('Thumbnail data unavailable');
       const parts = await Promise.all(responses.map(response => response.text()));
-      image.src = `data:${mimeType};base64,${parts.join('').replace(/\\s+/g, '')}`;
+      image.src = `data:${mimeType};base64,${parts.join('').replace(/\s+/g, '')}`;
       return true;
     } catch (error) {
       console.warn('Chunked thumbnail failed; using fallback image.', error);
