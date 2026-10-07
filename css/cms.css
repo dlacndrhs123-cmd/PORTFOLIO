@@ -53,10 +53,7 @@
 }
 
 
-/* Fourth WORK: embedded 16:9 Swiper cover */
-#works #works_inner .item[data-work-id="private-golf-lounge"] {
-  width: clamp(320px, 40%, 600px);
-}
+/* PRIVATE GOLF LOUNGE uses the same card size as the other WORK thumbnails. */
 #works #works_inner .work-card[data-cover-layout="slider"] {
   padding: 0;
   background: #000;
@@ -114,11 +111,6 @@
 }
 #works #works_inner .work-cover-pagination .swiper-pagination-bullet-active {
   background: #fff;
-}
-@media (max-width: 700px) {
-  #works #works_inner .item[data-work-id="private-golf-lounge"] {
-    width: min(86vw, 600px);
-  }
 }
 @media (prefers-reduced-motion: reduce) {
   #works #works_inner .work-cover-swiper .swiper-wrapper {
