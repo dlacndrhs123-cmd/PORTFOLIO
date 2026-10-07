@@ -81,14 +81,7 @@
     "published": true,
     "featured": false,
     "order": 5,
-    "coverLayout": "image",
-    "thumbnailBase64Chunks": [
-      "./data/cardnews-cover/part-1.txt",
-      "./data/cardnews-cover/part-2.txt",
-      "./data/cardnews-cover/part-3.txt",
-      "./data/cardnews-cover/part-4.txt",
-      "./data/cardnews-cover/part-5.txt"
-    ]
+    "coverLayout": "image"
   },
   {
     "id": "brochure",
