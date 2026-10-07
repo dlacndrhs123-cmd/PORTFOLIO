@@ -74,13 +74,14 @@
     "title": "Editorial Story",
     "category": "Card News",
     "year": "",
-    "thumbnail": "https://picsum.photos/900/620?random=15",
-    "thumbnailAlt": "카드뉴스",
+    "thumbnail": "/images/works/cardnews/cover.webp",
+    "thumbnailAlt": "Logo Branding Design — 12 십이월 NAIL 로고 브랜딩 썸네일",
     "description": "디지털 피드에서도 한 장의 지면을 읽는 듯한 높은 가독성의 에디토리얼 카드뉴스.",
     "detailPage": "detail-cardnews.html",
     "published": true,
     "featured": false,
-    "order": 5
+    "order": 5,
+    "coverLayout": "image"
   },
   {
     "id": "brochure",
